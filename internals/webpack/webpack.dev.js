@@ -17,11 +17,6 @@ module.exports = require('./webpack.base') ({
       'redux'
     ]
   },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(process.cwd(), 'dist'),
-    publicPath: '/',
-  },
   loaders: [
     // .ts, .tsx
     {
@@ -31,7 +26,7 @@ module.exports = require('./webpack.base') ({
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'src/index.html'
     })
   ]
 });
