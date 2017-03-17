@@ -102,6 +102,5 @@ module.exports = (options) => ({
     fs: 'empty',
     net: 'empty'
   },
-  target: 'web',
   performance: options.performance || {} 
 });

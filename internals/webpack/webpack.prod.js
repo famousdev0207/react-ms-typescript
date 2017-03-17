@@ -2,8 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 
 // plugins
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = require('./webpack.base') ({
   entry: {

@@ -1,9 +1,13 @@
+var path = require('path');
+var webpack = require('webpack');
+
 // plugins
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = require('./webpack.base') ({
   entry: {
-    main: 'src/index.tsx',
+    main: path.join(process.cwd(), 'src/index.tsx'),
     vendor: [
       'react',
       'react-dom',
@@ -13,11 +17,21 @@ module.exports = require('./webpack.base') ({
       'redux'
     ]
   },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(process.cwd(), 'dist'),
+    publicPath: '/',
+  },
   loaders: [
     // .ts, .tsx
     {
       test: /\.tsx?$/,
       loader: ['react-hot-loader', 'awesome-typescript-loader']
     },
+  ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
   ]
 });
