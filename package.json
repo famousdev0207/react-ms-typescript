@@ -9,46 +9,48 @@
     "lint": "npm run lint:tslint",
     "lint:tslint": "tslint \"src/**/*.tsx\" \"src/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
     "start": "webpack-dev-server -d --config internals/webpack/webpack.dev.js --history-api-fallback --hot --inline --progress --colors --port 3000 --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm run test:clean && npm run lint",
+    "test:clean": "rimraf ./coverage",
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "pre-commit": "lint:tslint",
   "license": "MIT",
-  "devDependencies": {
-    "@types/classnames": "^0.0.32",
-    "@types/node": "^7.0.4",
-    "@types/react": "^15.0.6",
-    "@types/react-dom": "^0.14.22",
-    "@types/react-redux": "^4.4.36",
-    "@types/react-router": "^3.0.0",
-    "@types/react-router-redux": "^4.0.39",
-    "@types/redux-actions": "^1.2.2",
-    "@types/webpack": "^2.2.4",
-    "@types/webpack-env": "^1.13.0",
-    "awesome-typescript-loader": "^3.0.0-beta.18",
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.0.0-beta.5",
-    "file-loader": "^0.10.0",
-    "html-loader": "^0.4.4",
-    "html-webpack-plugin": "^2.28.0",
-    "json-loader": "^0.5.4",
-    "postcss": "^5.2.11",
-    "postcss-browser-reporter": "^0.5.0",
-    "postcss-cssnext": "^2.9.0",
-    "postcss-import": "^9.1.0",
-    "postcss-loader": "^1.2.2",
-    "postcss-reporter": "^3.0.0",
-    "postcss-url": "^5.1.2",
-    "pre-commit": "^1.2.2",
-    "react-hot-loader": "^1.3.1",
-    "style-loader": "^0.13.1",
-    "tslint": "^4.5.1",
-    "tslint-loader": "^3.4.3",
-    "tslint-react": "^2.5.0",
-    "typescript": "^2.1.5",
-    "url-loader": "^0.5.7",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.2.0",
-    "webpack-hot-middleware": "^2.16.1"
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.test.{ts,tsx}",
+      "!src/*/RbGenerated*/*.{ts,tsx}",
+      "!src/definitions.d.ts",
+      "!src/global.d.ts",
+      "!src/index.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 98,
+        "branches": 91,
+        "functions": 98,
+        "lines": 98
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(css|less|styl|scss|sass)$": "<rootDir>/internals/mocks/cssModule.js",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
+    },
+    "testRegex": "tests/.*\\.test\\.ts$",
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    }
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -60,5 +62,49 @@
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-actions": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^0.0.32",
+    "@types/enzyme": "^2.7.5",
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.4",
+    "@types/react": "^15.0.6",
+    "@types/react-dom": "^0.14.22",
+    "@types/react-redux": "^4.4.36",
+    "@types/react-router": "^3.0.0",
+    "@types/react-router-redux": "^4.0.39",
+    "@types/redux-actions": "^1.2.2",
+    "@types/webpack": "^2.2.4",
+    "@types/webpack-env": "^1.13.0",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "coveralls": "^2.12.0",
+    "css-loader": "^0.26.1",
+    "enzyme": "^2.7.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.5",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.28.0",
+    "jest": "^19.0.2",
+    "json-loader": "^0.5.4",
+    "postcss": "^5.2.11",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.1.0",
+    "postcss-loader": "^1.2.2",
+    "postcss-reporter": "^3.0.0",
+    "postcss-url": "^5.1.2",
+    "pre-commit": "^1.2.2",
+    "react-hot-loader": "^1.3.1",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.13.1",
+    "ts-jest": "^19.0.2",
+    "tslint": "^4.5.1",
+    "tslint-loader": "^3.4.3",
+    "tslint-react": "^2.5.0",
+    "typescript": "^2.1.5",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.2.0",
+    "webpack-hot-middleware": "^2.16.1"
   }
 }
