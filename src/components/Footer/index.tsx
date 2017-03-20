@@ -19,7 +19,7 @@ interface IFooterProps {
   completedCount: number;
   onShow: (filter: TodoFilterType) => any;
   onClearCompleted: () => any;
-};
+}
 
 interface IFooterState {
   /* empty */
@@ -33,7 +33,7 @@ class Footer extends React.Component<IFooterProps, IFooterState> {
 
     return (
       <span className={style.count}>
-        <strong>{activeCount || 'No'}</strong> {itemWord} left
+        <strong>{activeCount || "No"}</strong> {itemWord} left
       </span>
     );
   }

@@ -7,7 +7,7 @@ const initialState: TodoStoreState = [{
   text: "Use Redux",
 }];
 
-export default handleActions<TodoStoreState, TodoItemData>({
+export default handleActions<TodoStoreState, ITodoItemData>({
   [Actions.ADD_TODO]: (state, action) => {
     return [{
       completed: false,

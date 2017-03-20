@@ -5,8 +5,8 @@ import TodoTextInput from "../TodoTextInput";
 import * as style from "./style.css";
 
 interface ITodoItemProps {
-  todo: TodoItemData;
-  editTodo: (todo: TodoItemData) => any;
+  todo: ITodoItemData;
+  editTodo: (todo: ITodoItemData) => any;
   deleteTodo: (id: number) => any;
   completeTodo: (id: number) => any;
 };
@@ -20,7 +20,7 @@ class TodoItem extends React.Component<ITodoItemProps, ITodoItemState> {
   constructor(props?: ITodoItemProps, context?: any) {
     super(props, context);
     this.state = {
-      editing: false
+      editing: false,
     };
     this.handleSave = this.handleSave.bind(this);
     this.handleDoubleClick = this.handleDoubleClick.bind(this);

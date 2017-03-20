@@ -8,7 +8,7 @@ import { IRootState } from "../../reducers";
 import * as style from "./style.css";
 
 interface IAppProps {
-  todos: TodoItemData[];
+  todos: ITodoItemData[];
   actions: typeof TodoActions;
 };
 

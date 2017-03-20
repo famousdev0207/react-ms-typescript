@@ -2,6 +2,7 @@
   "extends": ["tslint:latest", "tslint-react"],
   "rules": {
     // enable tslint-react rules here
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "no-empty-interface": false
   }
 }

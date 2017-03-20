@@ -4,6 +4,9 @@
 
 [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
 
+[typescript-react-redux-example](https://github.com/rangle/typescript-react-redux-example)
+
+
 ## Setup
 
 ```

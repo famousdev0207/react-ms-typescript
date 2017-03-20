@@ -2,7 +2,7 @@ import * as React from "react";
 import TodoTextInput from "../TodoTextInput";
 
 interface IHeaderProps {
-  addTodo: (todo: TodoItemData) => any;
+  addTodo: (todo: ITodoItemData) => any;
 }
 
 interface IHeaderState {
@@ -30,7 +30,8 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         <TodoTextInput
           newTodo={newTodo}
           onSave={this.handleSave}
-          placeholder="What needs to be done?" />
+          placeholder="What needs to be done?"
+        />
       </header>
     );
   }

@@ -13,7 +13,7 @@ const TODO_FILTERS = {
 };
 
 interface IMainSectionProps {
-  todos: TodoItemData[];
+  todos: ITodoItemData[];
   actions: typeof TodoActions;
 };
 
