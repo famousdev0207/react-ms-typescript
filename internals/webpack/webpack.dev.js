@@ -28,5 +28,6 @@ module.exports = require('./webpack.base') ({
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
-  ]
+  ],
+  devtool: "inline-source-map"
 });

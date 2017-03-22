@@ -18,8 +18,9 @@ module.exports = require('./webpack.base') ({
     ]
   },
   output: {
+    chunkFilename: '[name].[chunkhash].chunk.js',
     filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].chunk.js'
+    sourceMapFilename: '[name].[chunkhash].js.map'
   },
   loaders: [
     // .ts, .tsx
@@ -54,6 +55,7 @@ module.exports = require('./webpack.base') ({
       inject: true
     })
   ],
+  devtool: "source-map",
 
   performance: {
     assetFilter: (assetFilename) => !(/(\.map$)|(^(main\.|favicon\.))/.test(assetFilename))
