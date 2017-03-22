@@ -7,7 +7,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.js -p --progress --colors",
     "lint": "npm run lint:tslint",
-    "lint:tslint": "tslint \"src/**/*.tsx\" \"src/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
+    "lint:tslint": "tslint \"app/**/*.tsx\" \"app/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
     "start": "webpack-dev-server -d --config internals/webpack/webpack.dev.js --history-api-fallback --hot --inline --progress --colors --port 3000 --open",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
@@ -19,12 +19,11 @@
   "license": "MIT",
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/**/*.test.{ts,tsx}",
-      "!src/*/RbGenerated*/*.{ts,tsx}",
-      "!src/definitions.d.ts",
-      "!src/global.d.ts",
-      "!src/index.tsx"
+      "app/**/*.{ts,tsx}",
+      "!app/**/*.test.{ts,tsx}",
+      "!app/definitions.d.ts",
+      "!app/global.d.ts",
+      "!app/index.tsx"
     ],
     "coverageThreshold": {
       "global": {
@@ -36,7 +35,7 @@
     },
     "moduleDirectories": [
       "node_modules",
-      "src"
+      "app"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -104,7 +103,7 @@
     "typescript": "^2.1.5",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.2.0",
+    "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.16.1"
   }
 }

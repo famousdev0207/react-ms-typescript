@@ -3,8 +3,8 @@ var webpack = require('webpack');
 
 // variables
 var isProduction = process.env.NODE_ENV === 'production';
-var sourcePath = path.resolve(process.cwd(), 'src');
-var distPath = path.resolve(process.cwd(), 'dist');
+var sourcePath = path.resolve(process.cwd(), 'app');
+var outputPath = path.resolve(process.cwd(), 'build');
 
 // plugins
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -13,12 +13,12 @@ module.exports = (options) => ({
   entry: options.entry,
   output: Object.assign({
     filename: 'bundle.js',
-    path: distPath,
+    path: outputPath,
     publicPath: '/',
   }, options.output),
   target: 'web',
   resolve: {
-    modules: ['src', 'node_modules'],
+    modules: ['app', 'node_modules'],
     extensions: ['.js', '.ts', '.tsx'],
     // Fix webpack's default behavior to not load packages with jsnext:main module
     // https://github.com/Microsoft/TypeScript/issues/11677 

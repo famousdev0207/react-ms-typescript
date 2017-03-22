@@ -7,7 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = require('./webpack.base') ({
   entry: {
-    main: path.join(process.cwd(), 'src/index.tsx'),
+    main: path.join(process.cwd(), 'app/index.tsx'),
     vendor: [
       'react',
       'react-dom',
@@ -26,7 +26,7 @@ module.exports = require('./webpack.base') ({
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'app/index.html'
     })
   ],
   devtool: "inline-source-map"
