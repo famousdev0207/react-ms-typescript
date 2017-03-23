@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "A frontend boilerplate with React, Redux and Typescript",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.js -p --progress --colors",
     "lint": "npm run lint:tslint",
@@ -51,16 +51,37 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     }
   },
+  "dllPlugin": {
+    "path": "node_modulesreact-ms-dlls",
+    "exclude": [
+      "compression",
+      "cors",
+      "helmet",
+      "loopback-boot",
+      "serve-favicon",
+      "strong-error-handler",
+      "loopback-component-explorer",
+      "loopback"
+    ]
+  },
   "dependencies": {
     "classnames": "^2.2.5",
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
     "cross-env": "^3.2.4",
+    "helmet": "^3.5.0",
+    "loopback": "^3.5.0",
+    "loopback-boot": "^2.23.0",
+    "loopback-component-explorer": "^4.1.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
-    "redux-actions": "^1.2.1"
+    "redux-actions": "^1.2.1",
+    "serve-favicon": "^2.4.1",
+    "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {
     "@types/classnames": "^0.0.32",
@@ -79,12 +100,15 @@
     "coveralls": "^2.12.0",
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.1",
+    "eslint": "^3.18.0",
+    "eslint-config-loopback": "^8.0.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.28.0",
     "jest": "^19.0.2",
     "json-loader": "^0.5.4",
+    "nsp": "^2.6.3",
     "postcss": "^5.2.11",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^2.9.0",
@@ -105,5 +129,9 @@
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.16.1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
   }
 }
