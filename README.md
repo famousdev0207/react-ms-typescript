@@ -1,5 +1,7 @@
 # Frontend Boilerplate with React, Redux & TypeScript
 
+[LoopBack](http://loopback.io/getting-started/)
+
 [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
 
 [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
@@ -16,7 +18,7 @@ $ npm install
 ## Running
 
 ```
-$ npm start
+$ npm run start
 ```
 
 ## Build
