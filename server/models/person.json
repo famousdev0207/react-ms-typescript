@@ -1,6 +1,6 @@
 {
-  "name": "person",
-  "plural": "people",
+  "name": "Person",
+  "plural": "People",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,5 +14,24 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {
+    "find": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": {
+        "args": "person",
+        "type": "object"
+      },
+      "http": {
+        "verb": "get"
+      }
+    }
+  }
 }
