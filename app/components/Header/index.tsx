@@ -1,5 +1,5 @@
-import * as React from "react";
-import TodoTextInput from "../TodoTextInput";
+import * as React from 'react';
+import TodoTextInput from '../TodoTextInput';
 
 interface IHeaderProps {
   addTodo: (todo: ITodoItemData) => any;

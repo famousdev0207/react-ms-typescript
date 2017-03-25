@@ -1,10 +1,10 @@
-import * as React from "react";
-import { connect } from "react-redux";
-import * as TodoActions from "../../actions/todos";
-import { SHOW_ACTIVE, SHOW_ALL, SHOW_COMPLETED } from "../../constants/filters";
-import Footer from "../Footer";
-import TodoItem from "../TodoItem";
-import * as style from "./style.css";
+import * as React from 'react';
+import { connect } from 'react-redux';
+import * as TodoActions from '../../actions/todos';
+import { SHOW_ACTIVE, SHOW_ALL, SHOW_COMPLETED } from '../../constants/filters';
+import Footer from '../Footer';
+import TodoItem from '../TodoItem';
+import * as style from './style.css';
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,

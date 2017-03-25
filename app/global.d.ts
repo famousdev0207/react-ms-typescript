@@ -1,5 +1,5 @@
 // for style loader
-declare module "*.css" {
+declare module '*.css' {
   const styles: any;
   export = styles;
 }

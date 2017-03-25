@@ -1,8 +1,8 @@
-import * as classNames from "classnames";
-import * as React from "react";
-import { applyMiddleware } from "redux";
-import TodoTextInput from "../TodoTextInput";
-import * as style from "./style.css";
+import * as classNames from 'classnames';
+import * as React from 'react';
+import { applyMiddleware } from 'redux';
+import TodoTextInput from '../TodoTextInput';
+import * as style from './style.css';
 
 interface ITodoItemProps {
   todo: ITodoItemData;

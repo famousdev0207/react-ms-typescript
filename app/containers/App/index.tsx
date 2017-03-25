@@ -1,11 +1,11 @@
-import * as React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as TodoActions from "../../actions/todos";
-import Header from "../../components/Header";
-import MainSection from "../../components/MainSection";
-import { IRootState } from "../../reducers";
-import * as style from "./style.css";
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as TodoActions from '../../actions/todos';
+import Header from '../../components/Header';
+import MainSection from '../../components/MainSection';
+import { IRootState } from '../../reducers';
+import * as style from './style.css';
 
 interface IAppProps {
   todos: ITodoItemData[];

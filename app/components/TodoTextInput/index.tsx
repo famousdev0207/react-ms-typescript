@@ -1,6 +1,6 @@
-import * as classNames from "classnames";
-import * as React from "react";
-import * as style from "./style.css";
+import * as classNames from 'classnames';
+import * as React from 'react';
+import * as style from './style.css';
 
 interface ITodoTextInputProps {
   text?: string;
@@ -19,7 +19,7 @@ class TodoTextInput extends React.Component<ITodoTextInputProps, ITodoTextInputS
   constructor(props?: ITodoTextInputProps, context?: any) {
     super(props, context);
     this.state = {
-      text: this.props.text || "",
+      text: this.props.text || '',
     };
     this.handleBlur = this.handleBlur.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +31,7 @@ class TodoTextInput extends React.Component<ITodoTextInputProps, ITodoTextInputS
     if (e.which === 13) {
       this.props.onSave(text);
       if (this.props.newTodo) {
-        this.setState({ text: "" });
+        this.setState({ text: '' });
       }
     }
   }

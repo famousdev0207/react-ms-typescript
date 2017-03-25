@@ -5,7 +5,7 @@ import {
   COMPLETE_TODO,
   DELETE_TODO,
   EDIT_TODO,
-} from "../../constants/actions";
+} from '../../constants/actions';
 
 import {
   addTodo,
@@ -14,11 +14,11 @@ import {
   completeTodo,
   deleteTodo,
   editTodo,
-} from "../todos";
+} from '../todos';
 
-describe("Todos Actions", () => {
-  describe("addTodo", () => {
-    it("should return correct type", () => {
+describe('Todos Actions', () => {
+  describe('addTodo', () => {
+    it('should return correct type', () => {
       const expectedResult = {
         type: ADD_TODO,
       };
@@ -27,8 +27,8 @@ describe("Todos Actions", () => {
     });
   });
 
-  describe("clearCompleted", () => {
-    it("should return correct type", () => {
+  describe('clearCompleted', () => {
+    it('should return correct type', () => {
       const expectedResult = {
         type: CLEAR_COMPLETED,
       };
@@ -37,8 +37,8 @@ describe("Todos Actions", () => {
     });
   });
 
-  describe("completeAll", () => {
-    it("should return correct type", () => {
+  describe('completeAll', () => {
+    it('should return correct type', () => {
       const expectedResult = {
         type: COMPLETE_ALL,
       };
@@ -47,8 +47,8 @@ describe("Todos Actions", () => {
     });
   });
 
-  describe("completeTodo", () => {
-    it("should return correct type", () => {
+  describe('completeTodo', () => {
+    it('should return correct type', () => {
       const expectedResult = {
         type: COMPLETE_TODO,
       };
@@ -57,8 +57,8 @@ describe("Todos Actions", () => {
     });
   });
 
-  describe("deleteTodo", () => {
-    it("should return correct type", () => {
+  describe('deleteTodo', () => {
+    it('should return correct type', () => {
       const expectedResult = {
         type: DELETE_TODO,
       };
@@ -67,8 +67,8 @@ describe("Todos Actions", () => {
     });
   });
 
-  describe("editTodo", () => {
-    it("should return correct type", () => {
+  describe('editTodo', () => {
+    it('should return correct type', () => {
       const expectedResult = {
         type: EDIT_TODO,
       };

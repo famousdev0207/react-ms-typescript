@@ -1,6 +1,6 @@
-import { RouteActions, routerReducer as routing } from "react-router-redux";
-import { combineReducers, Reducer } from "redux";
-import todos from "./todos";
+import { RouteActions, routerReducer as routing } from 'react-router-redux';
+import { combineReducers, Reducer } from 'redux';
+import todos from './todos';
 
 export interface IRootState {
   routing: RouteActions;
