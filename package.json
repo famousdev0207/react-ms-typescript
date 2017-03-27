@@ -1,11 +1,18 @@
 {
   "name": "react-ms",
   "version": "1.0.0",
-  "private": true,
   "description": "A frontend boilerplate with React, Redux and Typescript",
+  "license": "MIT",
   "main": "server/index.js",
+  "pre-commit": "lint:tslint",
+  "private": true,
+  "repository": {
+    "type": "",
+    "url": ""
+  },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.js -p --progress --colors",
+    "build:dll": "node ./internals/scripts/dependencies.js",
     "lint": "npm run lint:tslint",
     "lint:tslint": "tslint \"app/**/*.tsx\" \"app/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
     "start": "cross-env NODE_ENV=development node server",
@@ -18,8 +25,6 @@
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
-  "pre-commit": "lint:tslint",
-  "license": "MIT",
   "jest": {
     "collectCoverageFrom": [
       "app/**/*.{ts,tsx}",
@@ -139,9 +144,5 @@
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.16.1"
-  },
-  "repository": {
-    "type": "",
-    "url": ""
   }
 }
