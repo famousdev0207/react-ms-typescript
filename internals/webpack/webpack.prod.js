@@ -4,7 +4,6 @@ const path = require('path');
 const webpack = require('webpack');
 
 // plugins
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = require('./webpack.base')({
