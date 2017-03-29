@@ -22,7 +22,6 @@ module.exports = require('./webpack.base')({
   output: {
     chunkFilename: '[name].[chunkhash].chunk.js',
     filename: '[name].[chunkhash].js',
-    sourceMapFilename: '[name].[chunkhash].js.map',
   },
   loaders: [
     // .ts, .tsx
@@ -69,7 +68,6 @@ module.exports = require('./webpack.base')({
       AppCache: false,
     }),
   ],
-  devtool: 'source-map',
 
   performance: {
     assetFilter: (assetFilename) => {
