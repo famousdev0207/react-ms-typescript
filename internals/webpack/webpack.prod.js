@@ -5,6 +5,7 @@ const webpack = require('webpack');
 
 // plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 module.exports = require('./webpack.base')({
   entry: {
@@ -54,6 +55,18 @@ module.exports = require('./webpack.base')({
         minifyURLs: true,
       },
       inject: true,
+    }),
+    new OfflinePlugin({
+      relativePaths: false,
+      publicPath: '/',
+      caches: {
+        main: [':rest:'],
+        additional: ['*.chunk.js'],
+      },
+
+      // Removes warning for about `additional` section usage
+      safeToUseOptionalCaches: true,
+      AppCache: false,
     }),
   ],
   devtool: 'source-map',

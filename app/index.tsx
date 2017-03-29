@@ -22,3 +22,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 );
+
+if (process.env.NODE_ENV === 'production') {
+  require('offline-plugin/runtime').install(); // tslint:disable-line:no-var-requires
+}
