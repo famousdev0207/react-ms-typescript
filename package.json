@@ -12,7 +12,6 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.js -p --progress --colors",
-    "build:dll": "node ./internals/scripts/dependencies.js",
     "lint": "npm run lint:tslint",
     "lint:tslint": "tslint \"app/**/*.tsx\" \"app/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
     "start": "cross-env NODE_ENV=development node server",
@@ -59,33 +58,13 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     }
   },
-  "dllPlugin": {
-    "path": "node_modules/react-ms-dlls",
-    "exclude": [
-      "chalk",
-      "compression",
-      "cors",
-      "express",
-      "helmet",
-      "ip",
-      "loopback",
-      "loopback-boot",
-      "loopback-component-explorer",
-      "serve-favicon",
-      "strong-error-handler"
-    ],
-    "include": [
-      "core-js",
-      "lodash",
-      "eventsource-polyfill"
-    ]
-  },
   "dependencies": {
     "chalk": "^1.1.3",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "cross-env": "^3.2.4",
+    "eventsource-polyfill": "^0.9.6",
     "express": "^4.15.2",
     "helmet": "^3.5.0",
     "ip": "^1.1.5",
@@ -119,12 +98,12 @@
     "@types/webpack-env": "^1.13.0",
     "awesome-typescript-loader": "^3.1.2",
     "cheerio": "^0.22.0",
+    "circular-dependency-plugin": "^2.0.0",
     "coveralls": "^2.12.0",
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.1",
     "eslint": "^3.18.0",
     "eslint-config-loopback": "^8.0.0",
-    "eventsource-polyfill": "^0.9.6",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
