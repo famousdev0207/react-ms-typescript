@@ -1,12 +1,18 @@
 # Frontend Boilerplate with React, Redux & TypeScript
 
-[LoopBack](http://loopback.io/getting-started/)
+The boilerplate for React & TypeScript was a lot, but it was not easy to find the right thing for me to do.
 
-[react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
+I decided to make it. 
 
-[react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
+I refer to the list listed below.
 
-[typescript-react-redux-example](https://github.com/rangle/typescript-react-redux-example)
+  [LoopBack](http://loopback.io/getting-started/)
+
+  [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
+
+  [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
+
+  [typescript-react-redux-example](https://github.com/rangle/typescript-react-redux-example)
 
 
 ## Setup
