@@ -50,4 +50,8 @@ module.exports = require('./webpack.base')({
     }),
   ],
   devtool: 'inline-source-map',
+
+  performance: {
+    hints: false,
+  },
 });
