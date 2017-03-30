@@ -11,7 +11,8 @@
     "url": ""
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.js -p --progress --colors",
+    "build": "npm run build:clean && cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.js -p --progress --colors",
+    "build:clean": "npm run test:clean && rimraf ./build",
     "lint": "npm run lint:tslint",
     "lint:tslint": "tslint \"app/**/*.tsx\" \"app/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
     "start": "cross-env NODE_ENV=development node server",
@@ -19,8 +20,8 @@
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
     "pretest": "npm run test:clean && npm run lint",
-    "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:clean": "rimraf ./coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },

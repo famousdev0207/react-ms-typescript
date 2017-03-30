@@ -76,12 +76,6 @@ module.exports = (options) => ({
         ],
       },
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      children: true,
-      filename: 'vendor.bundle.js',
-      minChunks: 2,
-    }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new ExtractTextPlugin({
       filename: 'styles.css',

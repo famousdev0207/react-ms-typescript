@@ -59,9 +59,9 @@ module.exports = require('./webpack.base')({
       relativePaths: false,
       publicPath: '/',
       caches: {
-        main: [':rest:'],
-        additional: ['*.chunk.js'],
+        main: ['/', ':rest:'],
       },
+      externals: ['/'],
 
       // Removes warning for about `additional` section usage
       safeToUseOptionalCaches: true,
