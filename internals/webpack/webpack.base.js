@@ -47,9 +47,27 @@ module.exports = (options) => ({
         }),
       },
       {test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader'},
+      {
+        test: /\.(jpg|png|gif)$/,
+        loader: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              progressive: true,
+              optimizationLevel: 7,
+              interlaced: false,
+              pngquant: {
+                quality: {
+                  quality: '65-90',
+                  speed: 4,
+                },
+              },
+            },
+          },
+        ],
+      },
       {test: /\.html$/, loader: 'html-loader'},
-      {test: /\.png$/, loader: 'url-loader?limit=10000'},
-      {test: /\.jpg$/, loader: 'file-loader'},
       {test: /\.json$/, loader: 'json-loader'},
       {test: /\.ts$/, enforce: 'pre', loader: 'tslint-loader', options: {}},
     ]),
