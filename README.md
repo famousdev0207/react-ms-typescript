@@ -2,13 +2,15 @@
 
 The boilerplate for React & TypeScript was a lot, but it was not easy to find the right thing for me to do.
 
-I decided to make it. 
+I decided to make it.
 
 I refer to the list listed below.
 
   [LoopBack](http://loopback.io/getting-started/)
 
   [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
+
+  [react-foundation](https://github.com/nordsoftware/react-foundation)
 
   [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
 
