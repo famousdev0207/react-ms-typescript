@@ -1,5 +1,5 @@
 import * as classNames from 'classnames';
-import { PropTypes } from 'react';
+import * as React from 'react';
 import { Breakpoints, FloatTypes } from './enums';
 
 /**
@@ -7,20 +7,20 @@ import { Breakpoints, FloatTypes } from './enums';
  *
  * @returns {Object}
  */
-export const GeneralPropTypes = {
-  float: PropTypes.oneOf(objectValues(FloatTypes)),
-  hideFor: PropTypes.oneOf([Breakpoints.MEDIUM, Breakpoints.LARGE]),
-  hideOnlyFor: PropTypes.oneOf(objectValues(Breakpoints)),
-  isClearfix: PropTypes.bool,
-  isHidden: PropTypes.bool,
-  isInvisible: PropTypes.bool,
-  showFor: PropTypes.oneOf([Breakpoints.MEDIUM, Breakpoints.LARGE]),
-  showForLandscape: PropTypes.bool,
-  showForPortrait: PropTypes.bool,
-  showForSr: PropTypes.bool,
-  showOnFocus: PropTypes.bool,
-  showOnlyFor: PropTypes.oneOf(objectValues(Breakpoints)),
-};
+// export interface IGeneralPropTypes extends React.Props<any> {
+//   [float: string]: FloatTypes;
+//   hideFor: PropTypes.oneOf([Breakpoints.MEDIUM, Breakpoints.LARGE]);
+//   hideOnlyFor: PropTypes.oneOf(objectValues(Breakpoints));
+//   isClearfix: boolean;
+//   isHidden: boolean;
+//   isInvisible: boolean;
+//   showFor: PropTypes.oneOf([Breakpoints.MEDIUM, Breakpoints.LARGE]);
+//   showForLandscape: boolean;
+//   showForPortrait: boolean;
+//   showForSr: boolean;
+//   showOnFocus: boolean;
+//   showOnlyFor: PropTypes.oneOf(objectValues(Breakpoints));
+// };
 
 /**
  * Creates class names from the given arguments.
@@ -101,7 +101,7 @@ export function objectValues(object) {
  * @param {Array} remove
  * @returns {Object}
  */
-export function removeProps(object, remove) {
+export function removeProps(object, remove): object {
   const result = {};
 
   for (const property in object) {
