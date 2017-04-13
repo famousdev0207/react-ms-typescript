@@ -82,7 +82,8 @@
     "redux": "^3.6.0",
     "redux-actions": "^1.2.1",
     "sanitize.css": "^5.0.0",
-    "strong-error-handler": "^2.0.0"
+    "strong-error-handler": "^2.0.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "@types/classnames": "^0.0.32",

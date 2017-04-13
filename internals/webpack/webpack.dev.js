@@ -8,7 +8,7 @@ const pkg = require(path.resolve(process.cwd(), 'package.json'));
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const logger = require('../../common/util/logging').logger;
+const logger = require('../../common/utils/logging').logger;
 
 module.exports = require('./webpack.base')({
   entry: {
