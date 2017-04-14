@@ -1,4 +1,5 @@
 import { applyMiddleware, createStore, Store } from 'redux';
+import thunk from 'redux-thunk';
 import { logger } from '../middleware';
 import rootReducer, { IRootState } from '../reducers';
 
@@ -7,7 +8,7 @@ export default function configureStore(initialState?: IRootState): Store<IRootSt
     ? window.devToolsExtension()(createStore)
     : createStore;
 
-  const createStoreWithMiddleware = applyMiddleware(logger)(create);
+  const createStoreWithMiddleware = applyMiddleware(logger, thunk)(create);
 
   const store = createStoreWithMiddleware(rootReducer, initialState) as Store<IRootState>;
 

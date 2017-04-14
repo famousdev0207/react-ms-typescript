@@ -16,7 +16,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
   public render() {
     return (
       <header>
-        <h1>react-ms</h1>
+        <h1>Hello</h1>
       </header>
     );
   }
