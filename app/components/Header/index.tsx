@@ -1,4 +1,6 @@
 import * as React from 'react';
+import A from '../A';
+import * as style from './style.css';
 
 interface IHeaderProps {
 }
@@ -15,8 +17,10 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
 
   public render() {
     return (
-      <header>
-        <h1>Hello</h1>
+      <header className={style.header}>
+        <div className={style.inner}>
+          <A className={style.logo}><span>Naver</span></A>
+        </div>
       </header>
     );
   }

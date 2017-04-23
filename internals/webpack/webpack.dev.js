@@ -7,6 +7,7 @@ const pkg = require(path.resolve(process.cwd(), 'package.json'));
 // plugins
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const logger = require('../../common/utils/logging').logger;
 
@@ -47,6 +48,11 @@ module.exports = require('./webpack.base')({
     }),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
+    }),
+    new StyleLintPlugin({
+      configFile: './.stylelintrc',
+      files: ['app/**/*.css'],
+      failOnError: false,
     }),
   ],
   devtool: 'inline-source-map',
