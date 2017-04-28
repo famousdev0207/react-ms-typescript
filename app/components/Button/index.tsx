@@ -15,7 +15,7 @@ export default function Button({
   id = '',
   children = null,
 }: IButtonProps) {
-  const classes = classNames('btn', 'btn-primary', className);
+  const classes = classNames('btn', 'not-rounded', className);
 
   return (
     <button

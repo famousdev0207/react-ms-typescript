@@ -16,7 +16,8 @@
 }
 
 .logo > span {
-  background: url('!url-loader!images/sp_common.png') no-repeat 0 0;
+
+  /* background: url('!url-loader!images/sp_common.png') no-repeat 0 0; */
   color: transparent;
   display: inline-block;
   font-size: 1px;

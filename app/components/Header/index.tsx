@@ -19,7 +19,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     return (
       <header className={style.header}>
         <div className={style.inner}>
-          <A className={style.logo}><span>Naver</span></A>
+          <A className={style.logo}><span>Test</span></A>
         </div>
       </header>
     );
