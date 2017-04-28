@@ -21,7 +21,7 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
   }
 
   public handleClick() {
-
+    return null;
   }
 
   public render() {
