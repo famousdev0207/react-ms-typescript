@@ -10,6 +10,8 @@ const outputPath = path.resolve(process.cwd(), 'build');
 
 // plugins
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractNormalCSS = new ExtractTextPlugin('[name].css');
+const ExtractGlobalCSS = new ExtractTextPlugin('global.css');
 
 module.exports = (options) => ({
   entry: options.entry,
@@ -27,8 +29,8 @@ module.exports = (options) => ({
   module: {
     loaders: options.loaders.concat([
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
+        test: /^((?!global).)*css$/,
+        loader: ExtractNormalCSS.extract({
           fallback: 'style-loader',
           use: [
             {
@@ -38,6 +40,23 @@ module.exports = (options) => ({
                 sourceMap: !isProduction,
                 importLoaders: 1,
                 localIdentName: '[local]__[hash:base64:5]',
+              },
+            },
+            {
+              loader: 'postcss-loader',
+            },
+          ],
+        }),
+      },
+      {
+        test: /global\.css$/,
+        loader: ExtractGlobalCSS.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              query: {
+                importLoaders: 1,
               },
             },
             {
@@ -90,19 +109,19 @@ module.exports = (options) => ({
       options: {
         context: sourcePath,
         postcss: [
-          require('postcss-import')({addDependencyTo: webpack}),
-          require('postcss-url')(),
-          require('postcss-cssnext')(),
-          require('postcss-reporter')(),
           require('postcss-browser-reporter')({disabled: isProduction}),
+          require('postcss-cssnext')(),
+          require('postcss-import')({
+            addDependencyTo: webpack,
+          }),
+          require('postcss-reporter')(),
+          require('postcss-url')(),
         ],
       },
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new ExtractTextPlugin({
-      filename: 'styles.css',
-      disable: !isProduction,
-    }),
+    ExtractNormalCSS,
+    ExtractGlobalCSS,
   ]),
   devtool: options.devtool,
   node: {
