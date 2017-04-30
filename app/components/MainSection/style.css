@@ -1,5 +1,40 @@
 .main {
-  border-top: 1px solid #e6e6e6;
+
+  /* border-top: 1px solid #e6e6e6; */
   position: relative;
   z-index: 2;
+}
+
+/* ########## 599px 이하 ########## */
+@media (max-width: 599px) {
+  color: #000;
+}
+
+/* ########## 600px 이상 ~ 767px 이하 ########## */
+@media (min-width: 600px) and (max-width: 767px) {
+  color: #fff;
+}
+
+/* ########## 768px 이상 ########## */
+@media (min-width: 768px) {
+  .main::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+
+  .editor {
+    float: left;
+    width: 50%;
+  }
+
+  .result {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* ########## 1040px 이상 ########## */
+@media (min-width: 1040px) {
+  color: #eee;
 }

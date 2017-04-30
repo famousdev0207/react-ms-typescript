@@ -1,35 +1,68 @@
-@import 'basscss-basic';
+/*
+ * btn
+ */
+.btn {
+  background: #69748a;
+  border: 1px solid #53687c;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 23px;
+}
 
-/* Add-on Modules */
-@import 'basscss-addons/modules/btn';
-@import 'basscss-addons/modules/btn-primary';
-@import 'basscss-addons/modules/background-colors';
-@import 'basscss-addons/modules/colors';
-@import 'basscss-addons/modules/forms';
-@import 'basscss-addons/modules/input-range';
-@import 'basscss-addons/modules/responsive-margin';
-@import 'basscss-addons/modules/responsive-padding';
-@import 'basscss-addons/modules/media-object';
-@import 'basscss-addons/modules/all';
-@import 'basscss-addons/modules/progress';
-@import 'basscss-addons/modules/lighten';
-@import 'basscss-addons/modules/background-images';
-@import 'basscss-addons/modules/darken';
+.btn:hover {
+  background: #767c98;
+}
 
-/* Base Modules */
-@import 'basscss-type-scale';
-@import 'basscss-typography';
-@import 'basscss-layout';
-@import 'basscss-align';
-@import 'basscss-margin';
-@import 'basscss-padding';
-@import 'basscss-grid';
-@import 'basscss-flexbox';
-@import 'basscss-position';
-@import 'basscss-border';
-@import 'basscss-hide';
+.btn-primary {
+  background: #0099ec;
+  border: 1px solid #0099ec;
+}
 
-button:focus {
-  border-color: rgba(0, 0, 0, 0) !important;
-  box-shadow: 0 0 0 0 !important;
+.btn-primary:hover {
+  background: #00adfc;
+  border-color: #00adfc;
+}
+
+.btn-green {
+  background: #00c73c;
+  border-color: #00bd39;
+}
+
+.btn-green:hover {
+  background: #00d243;
+  border-color: #00c740;
+}
+
+/**
+ * btn-group
+ */
+.btn-group {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.btn-group > .btn {
+  margin-left: -1px;
+}
+
+.btn-group > .btn:first-child {
+  margin-left: 0;
+}
+
+/**
+ * btn-toolbar
+ */
+.btn-toolbar {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-toolbar.justify {
+  justify-content: space-between !important;
 }

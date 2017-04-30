@@ -20,38 +20,38 @@ class TextArea extends React.Component<ITextAreaProps, ITextAreaState> {
     this.state = {
       text: this.props.text || '',
     };
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
-  public handleSubmit(e) {
+  public onSubmit(e) {
     const text = e.target.value.trim();
   }
 
-  public handleChange(e) {
+  public onChange(e) {
     this.setState({ text: e.target.value });
   }
 
-  public handleBlur(e) {
+  public onBlur(e) {
     const text = e.target.value.trim();
   }
 
   public render() {
-    const classes = classNames({
+    const classes = classNames(style.editor, {
       [style.edit]: this.props.editing,
       [style.new]: this.props.newTranslation,
-    }, style.normal);
+    });
 
     return (
-      <div className={style.classes}>
+      <div className={classes}>
         <textarea
           autoFocus={true}
           placeholder={this.props.placeholder}
           value={this.state.text}
-          onBlur={this.handleBlur}
-          onChange={this.handleChange}
-          onKeyDown={this.handleSubmit}
+          onBlur={this.onBlur}
+          onChange={this.onChange}
+          onKeyDown={this.onSubmit}
         />
       </div>
     );

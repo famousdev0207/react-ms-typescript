@@ -61,7 +61,6 @@
     "number-no-trailing-zeros": true,
     "order/properties-alphabetical-order": true,
     "property-no-vendor-prefix": true,
-    "rule-empty-line-before": "always-multi-line",
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-list-comma-newline-after": "always",
