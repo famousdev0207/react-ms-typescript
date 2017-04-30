@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as style from './style.css';
 
 interface ITextAreaProps {
+  className?: string;
   text?: string;
   placeholder?: string;
   newTranslation?: boolean;
@@ -41,7 +42,7 @@ class TextArea extends React.Component<ITextAreaProps, ITextAreaState> {
     const classes = classNames(style.editor, {
       [style.edit]: this.props.editing,
       [style.new]: this.props.newTranslation,
-    });
+    }, this.props.className);
 
     return (
       <div className={classes}>

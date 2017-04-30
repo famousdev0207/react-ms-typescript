@@ -29,32 +29,35 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
   public render() {
     return (
       <section className={style.main}>
-        <div className={style.editor}>
-          <ButtonToolbar>
-            <ButtonGroup>
-              <Button>한국어</Button>
-              <Button>영어</Button>
-            </ButtonGroup>
-          </ButtonToolbar>
-          <TextArea
-            newTranslation={true}
-            placeholder="번역할 내용을 입력하세요."
-          />
-        </div>
-        <div className={style.result}>
-          <ButtonToolbar>
-            <ButtonGroup>
-              <Button>영어</Button>
-              <Button>한국어</Button>
-            </ButtonGroup>
-            <ButtonGroup>
-              <Button onClick={this.handleTranslate}>
-                번역하기
-              </Button>
-            </ButtonGroup>
-          </ButtonToolbar>
-          <div>
-            Test
+        <div className={style.content}>
+          <div className={style.box_editor}>
+            <ButtonToolbar>
+              <ButtonGroup>
+                <Button>한국어</Button>
+                <Button>영어</Button>
+              </ButtonGroup>
+            </ButtonToolbar>
+            <TextArea
+              className={style.editor}
+              newTranslation={true}
+              placeholder="번역할 내용을 입력하세요."
+            />
+          </div>
+          <div className={style.box_result}>
+            <ButtonToolbar>
+              <ButtonGroup>
+                <Button>영어</Button>
+                <Button>한국어</Button>
+              </ButtonGroup>
+              <ButtonGroup>
+                <Button className="btn-primary" onClick={this.handleTranslate}>
+                  번역하기
+                </Button>
+              </ButtonGroup>
+            </ButtonToolbar>
+            <div className={style.result}>
+              <div/>
+            </div>
           </div>
         </div>
       </section>
@@ -63,4 +66,3 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
 }
 
 export default MainSection;
-

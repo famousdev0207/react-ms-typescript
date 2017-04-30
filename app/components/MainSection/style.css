@@ -5,6 +5,40 @@
   z-index: 2;
 }
 
+.content {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 10px;
+}
+
+.box_editor,
+.box_result {
+  padding: 10px;
+}
+
+.editor,
+.result {
+  margin-top: 10px;
+  min-height: 168px;
+  padding: 14px 32px 8px 14px;
+}
+
+.result {
+  background: #fafafa;
+  border: 1px solid #e3e3e4;
+}
+
+.result > div {
+  cursor: text;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 15px;
+  min-height: 111px;
+  outline: none;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
 /* ########## 599px 이하 ########## */
 @media (max-width: 599px) {
   color: #000;
@@ -17,18 +51,15 @@
 
 /* ########## 768px 이상 ########## */
 @media (min-width: 768px) {
-  .main::after {
+
+  .content::after {
     clear: both;
     content: '';
     display: block;
   }
 
-  .editor {
-    float: left;
-    width: 50%;
-  }
-
-  .result {
+  .box_editor,
+  .box_result {
     float: left;
     width: 50%;
   }
