@@ -7,6 +7,8 @@ import ButtonToolbar from '../ButtonToolbar';
 import TextArea from '../TextArea';
 import * as style from './style.css';
 
+import { logger } from '../../../common/utils/logging';
+
 interface IMainSectionProps {
   actions: typeof TranslationActions;
   translation: ITranslation;
@@ -23,6 +25,7 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
   }
 
   public handleTranslate() {
+    logger.info('handleTranslate');
     return null;
   }
 
@@ -30,7 +33,7 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
     return (
       <section className={style.main}>
         <div className={style.content}>
-          <div className={style.box_editor}>
+          <div className={style['box-editor']}>
             <ButtonToolbar>
               <ButtonGroup>
                 <Button>한국어</Button>
@@ -43,7 +46,7 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
               placeholder="번역할 내용을 입력하세요."
             />
           </div>
-          <div className={style.box_result}>
+          <div className={style['box-result']}>
             <ButtonToolbar>
               <ButtonGroup>
                 <Button>영어</Button>

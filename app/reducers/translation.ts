@@ -7,13 +7,18 @@ const initialState: TranslationStoreState = {
 };
 
 export default handleActions<TranslationStoreState, ITranslation>({
-  [Actions.DO_TRANSLATION]: (state, action) => {
+  [Actions.TRANSLATION_STARTED]: (state, action) => {
     return {
       completed: false,
       ...action.payload,
     };
   },
-  [Actions.COMPLETE_TRANSLATION]: (state, action) => {
+  [Actions.TRANSLATION_FAILED]: (state, action) => {
+    return {
+      completed: true,
+      ...state};
+  },
+  [Actions.TRANSLATION_ENDED]: (state, action) => {
     return {
       completed: true,
       ...state};

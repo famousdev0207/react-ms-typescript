@@ -8,11 +8,12 @@
 .content {
   margin: 0 auto;
   max-width: 1300px;
+  min-width: 320px;
   padding: 10px;
 }
 
-.box_editor,
-.box_result {
+.box-editor,
+.box-result {
   padding: 10px;
 }
 
@@ -58,8 +59,8 @@
     display: block;
   }
 
-  .box_editor,
-  .box_result {
+  .box-editor,
+  .box-result {
     float: left;
     width: 50%;
   }
