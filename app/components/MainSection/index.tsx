@@ -15,21 +15,30 @@ interface IMainSectionProps {
 };
 
 interface IMainSectionState {
+  translatedText: string;
 };
 
 class MainSection extends React.Component<IMainSectionProps, IMainSectionState> {
 
   constructor(props?: IMainSectionProps, context?: any) {
     super(props, context);
+    this.state = { translatedText: '' };
     this.handleTranslate = this.handleTranslate.bind(this);
   }
 
-  public handleTranslate() {
-    logger.info('handleTranslate');
-    return null;
+public handleTranslate() {
+    const source = 'kr';
+    const target = 'en';
+    const text = '안녕';
+    this.props.actions.translate({
+      source,
+      target,
+      text,
+    });
   }
 
   public render() {
+    const { translatedText } = this.props.translation;
     return (
       <section className={style.main}>
         <div className={style.content}>
@@ -59,7 +68,7 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
               </ButtonGroup>
             </ButtonToolbar>
             <div className={style.result}>
-              <div/>
+              <div>{translatedText}</div>
             </div>
           </div>
         </div>

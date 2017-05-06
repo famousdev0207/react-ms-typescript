@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router';
 import { bindActionCreators } from 'redux';
 import * as TranslationActions from '../../actions/translation';
 import Footer from '../../components/Footer';
@@ -8,11 +9,10 @@ import MainSection from '../../components/MainSection';
 import { IRootState } from '../../reducers';
 import * as style from './style.css';
 
-interface IAppProps {
+interface IAppProps extends RouteComponentProps<void, void> {
   translation: ITranslation;
   actions: typeof TranslationActions;
 };
-
 interface IAppState {
   /* empty */
 }

@@ -16,5 +16,8 @@ declare type TranslationID = number;
 
 declare interface ITranslation {
   completed?: boolean;
+  source?: string;
+  target?: string;
   text?: string;
+  translatedText?: string;
 }

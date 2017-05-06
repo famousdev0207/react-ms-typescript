@@ -38,5 +38,9 @@
   "Person": {
     "dataSource": "db",
     "public": true
+  },
+  "Translation": {
+    "dataSource": "db",
+    "public": true
   }
 }
