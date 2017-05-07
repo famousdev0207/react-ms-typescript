@@ -9,7 +9,7 @@ import Button from '../index';
 
 const className = 'btn';
 const onClick = () => null;
-const children = <h1>Test</h1>;
+const children = (<h1>Test</h1>);
 const renderComponent = (props = {}) => mount(
   <Button className={className} {...props}>
     {children}
