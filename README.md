@@ -10,8 +10,6 @@ I refer to the list listed below.
 
   [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
 
-  [react-foundation](https://github.com/nordsoftware/react-foundation)
-
   [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
 
   [typescript-react-redux-example](https://github.com/rangle/typescript-react-redux-example)

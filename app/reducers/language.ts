@@ -3,10 +3,6 @@ import * as Actions from '../constants/actions';
 
 const initialState: LanguageStoreState = {
   completed: false,
-  source: '',
-  target: '',
-  text: '',
-  translatedText: '',
 };
 
 export default handleActions<LanguageStoreState, ILanguage>({
@@ -17,11 +13,10 @@ export default handleActions<LanguageStoreState, ILanguage>({
     };
   },
   [Actions.TRANSLATION_SUCCEEDED]: (state, action) => {
-    const x = {
+    return {
       completed: true,
       ...state,
-      translatedText: action.payload.translatedText};
-    return x;
+      ...action.payload};
   },
   [Actions.TRANSLATION_FAILED]: (state, action) => {
     return {

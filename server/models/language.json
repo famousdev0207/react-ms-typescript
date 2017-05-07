@@ -27,8 +27,9 @@
         }
       ],
       "returns": {
-        "args": "translatedText",
-        "type": "text"
+        "args": "result",
+        "type": "string",
+        "root": true
       },
       "http": {
         "verb": "post"

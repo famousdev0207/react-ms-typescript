@@ -1,7 +1,6 @@
 import { createAction } from 'redux-actions';
 import { createActionThunk } from 'redux-thunk-actions';
 import * as Actions from '../constants/actions';
-import logger from '../utils/logger';
 import request from '../utils/request';
 
 export const translate = createActionThunk<ITranslation>(Actions.TRANSLATION, async (args, store) => {
@@ -13,7 +12,6 @@ export const translate = createActionThunk<ITranslation>(Actions.TRANSLATION, as
     target,
     text,
   });
-  logger.debug(body);
   return await request('/api/v1/language/translate', {
     body,
     compress: true,

@@ -1,8 +1,0 @@
-[master 59a7fe2] translation
- 15 files changed, 101 insertions(+), 54 deletions(-)
- rename app/actions/{translation.ts => language.ts} (70%)
- rename app/reducers/{translation.ts => language.ts} (86%)
- create mode 100644 server/models/language.js
- create mode 100644 server/models/language.json
- delete mode 100644 server/models/translation.js
- delete mode 100644 server/models/translation.json
