@@ -8,13 +8,15 @@ export const translate = createActionThunk<ITranslation>(Actions.TRANSLATION, as
   const source = args.source;
   const target = args.target;
   const text = args.text;
-  logger.debug(`source: ${source}, target: ${target}, text: ${text}`);
-  return await request('/api/language/translate', {
-    body: JSON.stringify({
-      source,
-      target,
-      text,
-    }),
+  const body = JSON.stringify({
+    source,
+    target,
+    text,
+  });
+  logger.debug(body);
+  return await request('/api/v1/language/translate', {
+    body,
+    compress: true,
     headers: {
       'Content-Type': 'application/json',
     },
