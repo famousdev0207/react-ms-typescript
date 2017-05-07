@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import * as TranslationActions from '../../actions/translation';
+import * as LanguageActions from '../../actions/language';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import ButtonToolbar from '../ButtonToolbar';
@@ -10,8 +10,8 @@ import * as style from './style.css';
 import { logger } from '../../../common/utils/logging';
 
 interface IMainSectionProps {
-  actions: typeof TranslationActions;
-  translation: ITranslation;
+  actions: typeof LanguageActions;
+  language: ILanguage;
 };
 
 interface IMainSectionState {
@@ -38,7 +38,7 @@ public handleTranslate() {
   }
 
   public render() {
-    const { translatedText } = this.props.translation;
+    const { translatedText } = this.props.language;
     return (
       <section className={style.main}>
         <div className={style.content}>

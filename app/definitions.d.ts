@@ -10,11 +10,11 @@ declare type TodoFilterType = 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED';
 
 declare type TodoStoreState = ITodoItemData[];
 
-declare type TranslationStoreState = ITranslation;
+declare type LanguageStoreState = ILanguage;
 
 declare type TranslationID = number;
 
-declare interface ITranslation {
+declare interface ILanguage {
   completed?: boolean;
   source?: string;
   target?: string;

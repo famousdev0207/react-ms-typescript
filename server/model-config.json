@@ -39,7 +39,7 @@
     "dataSource": "db",
     "public": true
   },
-  "Translation": {
+  "Language": {
     "dataSource": "db",
     "public": true
   }

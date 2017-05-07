@@ -9,5 +9,15 @@ export const translate = createActionThunk<ITranslation>(Actions.TRANSLATION, as
   const target = args.target;
   const text = args.text;
   logger.debug(`source: ${source}, target: ${target}, text: ${text}`);
-  return await request('/api/translations', {});
+  return await request('/api/language/translate', {
+    body: JSON.stringify({
+      source,
+      target,
+      text,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    method: 'POST',
+  });
 });

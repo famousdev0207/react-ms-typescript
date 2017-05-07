@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 import * as Actions from '../constants/actions';
 
-const initialState: TranslationStoreState = {
+const initialState: LanguageStoreState = {
   completed: false,
   source: '',
   target: '',
@@ -9,7 +9,7 @@ const initialState: TranslationStoreState = {
   translatedText: '',
 };
 
-export default handleActions<TranslationStoreState, ITranslation>({
+export default handleActions<LanguageStoreState, ILanguage>({
   [Actions.TRANSLATION_STARTED]: (state, action) => {
     return {
       completed: false,

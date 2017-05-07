@@ -4,6 +4,8 @@ const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
+const config = require(path.resolve(process.cwd(), 'server/config.json'));
+const filter = new RegExp('^(?!' + config.restApiRoot + ').*');
 
 // Dev middleware
 const addDevMiddlewares = (app, webpackConfig) => {
@@ -32,7 +34,7 @@ const addDevMiddlewares = (app, webpackConfig) => {
     });
   }
 
-  app.get(/^\/(?!api).*/, (req, res) => {
+  app.get(filter, (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
       if (err) {
         res.sendStatus(404);
@@ -45,7 +47,7 @@ const addDevMiddlewares = (app, webpackConfig) => {
 
 // Production middlewares
 const addProdMiddlewares = (app, options) => {
-  const publicPath = options.publicPath || '/';
+  const publicPath = options.publicPath || '/'
   const outputPath = options.outputPath || path.resolve(process.cwd(), 'build');
 
   // compression middleware compresses your server responses which makes them
@@ -54,7 +56,7 @@ const addProdMiddlewares = (app, options) => {
   app.use(compression());
   app.use(publicPath, express.static(outputPath));
 
-  app.get(/^\/(?!api).*/, (req, res) => {
+  app.get(filter, (req, res) => {
     return res.sendFile(path.resolve(outputPath, 'index.html'));
   });
 };

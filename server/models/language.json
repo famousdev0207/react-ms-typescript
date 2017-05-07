@@ -1,0 +1,52 @@
+{
+  "name": "Language",
+  "plural": "Language",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "translatedText": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "translate": {
+      "accepts": [
+        {
+          "arg": "source",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "target",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "text",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": {
+        "args": "translatedText",
+        "type": "string"
+      },
+      "http": {
+        "verb": "post"
+      }
+    }
+  }
+}
