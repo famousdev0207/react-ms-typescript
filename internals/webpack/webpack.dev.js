@@ -9,7 +9,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const logger = require('../../common/utils/logging').logger;
+const logger = require('../../server/utils/logger');
 
 module.exports = require('./webpack.base')({
   entry: {

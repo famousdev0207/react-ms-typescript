@@ -28,7 +28,7 @@
       ],
       "returns": {
         "args": "translatedText",
-        "type": "string"
+        "type": "text"
       },
       "http": {
         "verb": "post"

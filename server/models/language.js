@@ -1,10 +1,11 @@
 'use strict';
+const logger = require('../../server/utils/logger');
 
 module.exports = function(Language) {
   Language.translate = (language, cb) => {
-    console.log(`source: ${language.source}, target: ${language.target}, text: ${language.text}`);
+    logger.debug(`source: ${language.source}, target: ${language.target}, text: ${language.text}`);
     process.nextTick(() => {
-      cb('Hello');
+      cb(null, 'Hello');
     });
   };
 };

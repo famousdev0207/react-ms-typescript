@@ -7,7 +7,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import TextArea from '../TextArea';
 import * as style from './style.css';
 
-import { logger } from '../../../common/utils/logging';
+import logger from '../../utils/logger';
 
 interface IMainSectionProps {
   actions: typeof LanguageActions;

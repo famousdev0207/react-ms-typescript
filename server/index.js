@@ -8,7 +8,7 @@ const loopback = require('loopback');
 const boot = require('loopback-boot');
 const ngrok = (isDev && process.env.ENABLE_TUNNEL) ? require('ngrok') : false;
 const resolve = require('path').resolve;
-const logger = require('../common/utils/logging').logger;
+const logger = require('./utils/logger');
 const setup = require('./middlewares/frontendMiddleware');
 
 const app = module.exports = loopback();

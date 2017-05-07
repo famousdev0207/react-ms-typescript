@@ -1,7 +1,7 @@
 import { createAction } from 'redux-actions';
 import { createActionThunk } from 'redux-thunk-actions';
-import { logger } from '../../common/utils/logging';
 import * as Actions from '../constants/actions';
+import logger from '../utils/logger';
 import request from '../utils/request';
 
 export const translate = createActionThunk<ITranslation>(Actions.TRANSLATION, async (args, store) => {
