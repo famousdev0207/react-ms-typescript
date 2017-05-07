@@ -2,15 +2,15 @@ import * as classNames from 'classnames';
 import * as React from 'react';
 
 interface IAProps extends React.Props<any> {
-  onClick?: () => void;
-  type?: string;
   className?: string;
-  id?: string;
+  href?: string;
+  onClick?: () => void;
 };
 
 export default function A({
-  onClick = null,
   className = '',
+  href = '#',
+  onClick = null,
   children = null,
 }: IAProps) {
   const classes = classNames(className);

@@ -55,7 +55,7 @@
       ".*\\.(css|less|styl|scss|sass)$": "<rootDir>/internals/mocks/cssModule.js",
       ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
     },
-    "testRegex": "tests/.*\\.test\\.ts$",
+    "testRegex": "tests/.*\\.test\\.(ts|tsx)$",
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     }
@@ -76,8 +76,8 @@
     "loopback-component-explorer": "^4.1.1",
     "minimist": "^1.2.0",
     "moment": "^2.18.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.8",
@@ -112,7 +112,7 @@
     "circular-dependency-plugin": "^2.0.0",
     "coveralls": "^2.12.0",
     "css-loader": "^0.26.1",
-    "enzyme": "^2.7.1",
+    "enzyme": "^2.8.2",
     "eslint": "^3.18.0",
     "eslint-config-loopback": "^8.0.0",
     "exports-loader": "^0.6.4",
@@ -134,6 +134,7 @@
     "postcss-url": "^5.1.2",
     "pre-commit": "^1.2.2",
     "react-hot-loader": "^1.3.1",
+    "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.7",
     "style-loader": "^0.13.1",
