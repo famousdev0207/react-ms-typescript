@@ -1,23 +1,14 @@
 import { createAction } from 'redux-actions';
 import { createActionThunk } from 'redux-thunk-actions';
 import * as Actions from '../constants/actions';
-import request from '../utils/request';
+import { post } from '../utils/request';
 
 export const translate = createActionThunk<ITranslation>(Actions.TRANSLATION, async (args, store) => {
-  const source = args.source;
-  const target = args.target;
-  const text = args.text;
-  const body = JSON.stringify({
-    source,
-    target,
-    text,
-  });
-  return await request('/api/v1/language/translate', {
+  const body = JSON.stringify(args);
+  return await post('/api/v1/language/translate', {
     body,
-    compress: true,
     headers: {
       'Content-Type': 'application/json',
     },
-    method: 'POST',
   });
 });

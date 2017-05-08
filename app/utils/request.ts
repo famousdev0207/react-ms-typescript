@@ -27,6 +27,20 @@ function checkStatus(response: Response) {
   throw error;
 }
 
+export function get(url, options) {
+  return request(url, Object.assign({
+    compress: true,
+    method: 'GET',
+  }, options));
+}
+
+export function post(url, options) {
+  return request(url, Object.assign({
+    compress: true,
+    method: 'POST',
+  }, options));
+}
+
 /**
  * Requests a URL, returning a promise
  *
