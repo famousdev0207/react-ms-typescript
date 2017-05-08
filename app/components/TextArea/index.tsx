@@ -8,11 +8,11 @@ interface ITextAreaProps {
   placeholder?: string;
   newTranslation?: boolean;
   editing?: boolean;
-};
+}
 
 interface ITextAreaState {
   text: string;
-};
+}
 
 class TextArea extends React.Component<ITextAreaProps, ITextAreaState> {
 

@@ -5,7 +5,7 @@ interface IAProps extends React.Props<any> {
   className?: string;
   href?: string;
   onClick?: () => void;
-};
+}
 
 export default function A({
   className = '',

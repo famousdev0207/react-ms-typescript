@@ -3,7 +3,7 @@ import * as React from 'react';
 
 interface IButtonGroupProps extends React.Props<any> {
   className?: string;
-};
+}
 
 export default function ButtonGroup({
   className = '',

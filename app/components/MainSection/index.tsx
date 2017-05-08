@@ -12,11 +12,11 @@ import logger from '../../utils/logger';
 interface IMainSectionProps {
   actions: typeof LanguageActions;
   language: ILanguage;
-};
+}
 
 interface IMainSectionState {
   translatedText: string;
-};
+}
 
 class MainSection extends React.Component<IMainSectionProps, IMainSectionState> {
 
@@ -26,7 +26,7 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
     this.handleTranslate = this.handleTranslate.bind(this);
   }
 
-public handleTranslate() {
+  public handleTranslate() {
     const source = 'kr';
     const target = 'en';
     const text = '안녕';

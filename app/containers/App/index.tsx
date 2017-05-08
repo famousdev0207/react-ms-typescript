@@ -12,7 +12,8 @@ import * as style from './style.css';
 interface IAppProps extends RouteComponentProps<void, void> {
   language: ILanguage;
   actions: typeof LanguageActions;
-};
+}
+
 interface IAppState {
   /* empty */
 }

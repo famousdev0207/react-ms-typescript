@@ -4,7 +4,7 @@ import * as React from 'react';
 interface IButtonProps extends React.Props<any> {
   onClick?: () => void;
   className?: string;
-};
+}
 
 export default function Button({
   onClick = null,

@@ -3,7 +3,7 @@ import * as React from 'react';
 
 interface IButtonToolbarProps extends React.Props<any> {
   className?: string;
-};
+}
 
 export default function ButtonToolbar({
   className = '',
