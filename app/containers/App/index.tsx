@@ -10,8 +10,8 @@ import { IRootState } from '../../reducers';
 import * as style from './style.css';
 
 interface IAppProps extends RouteComponentProps<void, void> {
-  language: ILanguage;
   actions: typeof LanguageActions;
+  language: ILanguage;
 }
 
 interface IAppState {

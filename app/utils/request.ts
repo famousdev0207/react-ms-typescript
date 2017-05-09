@@ -7,7 +7,7 @@ import 'whatwg-fetch';
  *
  * @return {object}          The parsed JSON from the request
  */
-function parseJSON(response: Response) {
+export function parseJSON(response: any) {
   return response.json();
 }
 
@@ -18,27 +18,13 @@ function parseJSON(response: Response) {
  *
  * @return {object|undefined} Returns either the response, or throws an error
  */
-function checkStatus(response: Response) {
+export function checkStatus(response: any) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
 
   const error = new Error(response.statusText);
   throw error;
-}
-
-export function get(url, options) {
-  return request(url, Object.assign({
-    compress: true,
-    method: 'GET',
-  }, options));
-}
-
-export function post(url, options) {
-  return request(url, Object.assign({
-    compress: true,
-    method: 'POST',
-  }, options));
 }
 
 /**

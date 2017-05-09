@@ -9,7 +9,7 @@ import * as style from './style.css';
 
 import logger from '../../utils/logger';
 
-interface IMainSectionProps {
+export interface IMainSectionProps {
   actions: typeof LanguageActions;
   language: ILanguage;
 }
@@ -51,7 +51,6 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
             </ButtonToolbar>
             <TextArea
               className={style.editor}
-              newTranslation={true}
               placeholder="번역할 내용을 입력하세요."
             />
           </div>
@@ -62,7 +61,7 @@ class MainSection extends React.Component<IMainSectionProps, IMainSectionState> 
                 <Button>한국어</Button>
               </ButtonGroup>
               <ButtonGroup>
-                <Button className="btn-primary" onClick={this.handleTranslate}>
+                <Button id="btnTranslate" className="btn-primary" onClick={this.handleTranslate}>
                   번역하기
                 </Button>
               </ButtonGroup>

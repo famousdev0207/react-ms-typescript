@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 const logger = {
   debug: (msg) => {
-    console.debug(msg);
+    console.info(msg);
   },
 
   error: (msg) => {

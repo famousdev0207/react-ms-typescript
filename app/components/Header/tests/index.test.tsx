@@ -1,3 +1,6 @@
+/**
+ * Testing our Header component
+ */
 jest.mock('../style.css', () => jest.fn());
 
 import { shallow } from 'enzyme';
