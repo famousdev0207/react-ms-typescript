@@ -1,23 +1,19 @@
 import logger from '../logger';
 
 describe('utils/logger', () => {
-  it('should handle debug log', () => {
-    logger.debug('debug');
+  it('should have debug property', () => {
     expect(logger).toHaveProperty('debug');
   });
 
-  it('should handle error log', () => {
-    logger.error('error');
+  it('should have error property', () => {
     expect(logger).toHaveProperty('error');
   });
 
-  it('should handle info log', () => {
-    logger.info('info');
+  it('should have info property', () => {
     expect(logger).toHaveProperty('info');
   });
 
-  it('should handle log', () => {
-    logger.log('log');
+  it('should have log property', () => {
     expect(logger).toHaveProperty('log');
   });
 });

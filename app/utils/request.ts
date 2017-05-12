@@ -1,5 +1,19 @@
 import 'whatwg-fetch';
 
+export function get(url, options) {
+  return request(url, Object.assign({
+    compress: true,
+    method: 'GET',
+  }, options));
+}
+
+export function post(url, options) {
+  return request(url, Object.assign({
+    compress: true,
+    method: 'POST',
+  }, options));
+}
+
 /**
  * Parses the JSON returned by a network request
  *
@@ -7,7 +21,7 @@ import 'whatwg-fetch';
  *
  * @return {object}          The parsed JSON from the request
  */
-export function parseJSON(response: any) {
+export function parseJSON(response: Response) {
   return response.json();
 }
 
@@ -18,7 +32,7 @@ export function parseJSON(response: any) {
  *
  * @return {object|undefined} Returns either the response, or throws an error
  */
-export function checkStatus(response: any) {
+export function checkStatus(response: Response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }

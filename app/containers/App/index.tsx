@@ -9,7 +9,7 @@ import MainSection from '../../components/MainSection';
 import { IRootState } from '../../reducers';
 import * as style from './style.css';
 
-interface IAppProps extends RouteComponentProps<void, void> {
+export interface IAppProps extends RouteComponentProps<void, void> {
   actions: typeof LanguageActions;
   language: ILanguage;
 }
@@ -18,7 +18,7 @@ interface IAppState {
   /* empty */
 }
 
-class App extends React.Component<IAppProps, IAppState> {
+export class App extends React.Component<IAppProps, IAppState> {
   public render() {
     const { language, actions } = this.props;
     return (
@@ -37,7 +37,7 @@ function mapStateToProps(state: IRootState) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(LanguageActions as any, dispatch),
   };
