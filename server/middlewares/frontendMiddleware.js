@@ -47,7 +47,7 @@ const addDevMiddlewares = (app, webpackConfig) => {
 
 // Production middlewares
 const addProdMiddlewares = (app, options) => {
-  const publicPath = options.publicPath || '/'
+  const publicPath = options.publicPath || '/';
   const outputPath = options.outputPath || path.resolve(process.cwd(), 'build');
 
   // compression middleware compresses your server responses which makes them

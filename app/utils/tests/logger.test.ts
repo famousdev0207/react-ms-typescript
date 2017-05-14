@@ -16,4 +16,8 @@ describe('utils/logger', () => {
   it('should have log property', () => {
     expect(logger).toHaveProperty('log');
   });
+  logger.debug('debug');
+  logger.error('error');
+  logger.info('info');
+  logger.log('log');
 });

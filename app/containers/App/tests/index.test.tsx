@@ -24,7 +24,7 @@ describe('<App />', () => {
 
   const props = {
     actions: null,
-    language: null,
+    language: '',
     location: null,
     params: null,
     route: null,
