@@ -8,15 +8,12 @@ export default function configureStore(history, initialState?: IRootState): Stor
   const create = window.devToolsExtension
     ? window.devToolsExtension()(createStore)
     : createStore;
-
   const middlewares: Middleware[] = [
     logger,
     routerMiddleware(history),
     thunk,
   ];
-
   const createStoreWithMiddleware = applyMiddleware(...middlewares)(create);
-
   const store = createStoreWithMiddleware(rootReducer, initialState) as Store<IRootState>;
 
   if (module.hot) {

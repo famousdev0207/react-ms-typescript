@@ -25,7 +25,7 @@ import {
 const middlewares = [thunk];
 // const mockStore = configureMockStore(middlewares);
 const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-const store = createStoreWithMiddleware(rootReducer, {}) as Store<IRootState>;
+const store = createStoreWithMiddleware(rootReducer) as Store<IRootState>;
 
 describe('actions/language', () => {
 
@@ -39,11 +39,11 @@ describe('actions/language', () => {
         { type: TRANSLATION_ENDED },
       ];
       // const store = mockStore({});
+      logger.debug(store.dispatch);
       return store.dispatch(translate({
         source: LANGUAGE_EN,
         target: LANGUAGE_KO,
         text: '안녕'})).then((data) => {
-          logger.debug(data);
           expect(data).toEqual(expectedActions);
       });
     });

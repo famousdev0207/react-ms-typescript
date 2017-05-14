@@ -33,7 +33,8 @@
       "!app/definitions.d.ts",
       "!app/global.d.ts",
       "!app/index.tsx",
-      "!app/utils/request.ts"
+      "!app/utils/request.ts",
+      "!app/actions/*"
     ],
     "coverageThreshold": {
       "global": {
