@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import logger from '../utils/logger';
 
 export function get(url, options) {
   return request(url, Object.assign({
@@ -36,7 +37,6 @@ export function checkStatus(response: Response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
-
   const error = new Error(response.statusText);
   throw error;
 }

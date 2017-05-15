@@ -9,7 +9,7 @@ describe('store', () => {
   let store;
 
   beforeAll(() => {
-    store = configureStore(browserHistory, {});
+    store = configureStore(browserHistory);
   });
 
   describe('configureStore', () => {
@@ -18,8 +18,8 @@ describe('store', () => {
     });
 
     it('should handle hot option', () => {
-      module.hot = true;
-      store = configureStore(browserHistory, {});
+      // module.hot = true;
+      store = configureStore(browserHistory);
       expect(module.hot).toBe(true);
     });
   });
